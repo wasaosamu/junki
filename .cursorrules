@@ -1,0 +1,4 @@
+# 純鬼プロジェクト用
+
+- コードを更新した場合は、コミット後に GitHub へ push する（`git remote` が設定済みの場合）。
+- 手順: `git add -A` → `git commit -m "説明"` → `git push`

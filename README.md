@@ -91,3 +91,27 @@ python main.py
 │   └── 青鬼ストーリー.md
 └── README.md
 ```
+
+## GitHub へのプッシュ
+
+### 初回（リモートをまだ追加していない場合）
+
+1. GitHub で新しいリポジトリを作成する（例: リポジトリ名 `junki`、private/public は任意）。
+2. リポジトリの「Code」から URL をコピー（例: `https://github.com/あなたのユーザー名/junki.git`）。
+3. プロジェクトフォルダで次を実行する（URL は自分のリポジトリに合わせて書き換え）:
+
+```bash
+cd /Users/fukumotoryou/projects/my-python/純鬼
+git remote add origin https://github.com/あなたのユーザー名/リポジトリ名.git
+git push -u origin main
+```
+
+### 更新をプッシュする場合
+
+コードを更新したあと、次のようにコミットしてプッシュします（依頼があれば Cursor 側で実施）。
+
+```bash
+git add -A
+git commit -m "変更内容のメッセージ"
+git push
+```
