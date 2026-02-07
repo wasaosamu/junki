@@ -32,7 +32,8 @@ class Game:
         """ゲーム開始時に1回だけ実行される。Pygame とウィンドウの準備をする。"""
         pygame.init()                                                       # Pygame のサブシステムを初期化。以降 set_mode / Font / event などが使える
 
-        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))                 # 描画先ウィンドウ。_draw_title / 今後のプレイ描画で使用
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+                                                                       # 描画先ウィンドウ。_draw_title / 今後のプレイ描画で使用
         pygame.display.set_caption("純鬼")                                   # ウィンドウのタイトルバーに表示する文字
 
         self.clock = pygame.time.Clock()                                    # FPS 制御用。run() の clock.tick(FPS) で使用
