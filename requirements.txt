@@ -1,0 +1,5 @@
+# 純鬼 プロジェクト - 依存ライブラリ
+# Python 3.14.2 / venv 使用
+# SQLite は Python 標準ライブラリ sqlite3 で対応（追加不要）
+
+pygame>=2.5.0

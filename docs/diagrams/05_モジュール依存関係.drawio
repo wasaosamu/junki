@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-01-29T00:00:00.000Z" agent="Cursor" version="22.0.0" type="device">
+  <diagram id="module-dep" name="モジュール依存関係">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="main" value="main.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="game" value="game.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="player" value="player.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="120" y="260" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="junki" value="junki.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="260" y="260" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="map" value="map/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="puzzle" value="puzzle/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="db/" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="640" y="255" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ui" value="ui/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="360" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="em1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="main" target="game">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="game" target="player">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="game" target="junki">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="game" target="map">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="game" target="puzzle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="220"/>
+              <mxPoint x="560" y="220"/>
+              <mxPoint x="560" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="em6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="game" target="db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="220"/>
+              <mxPoint x="685" y="220"/>
+              <mxPoint x="685" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="em7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="game" target="ui">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="em8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="player" target="map">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="280"/>
+              <mxPoint x="440" y="280"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="em9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="junki" target="map">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="280"/>
+              <mxPoint x="440" y="280"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="em10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="puzzle" target="db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="300"/>
+              <mxPoint x="685" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

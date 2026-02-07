@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-01-29T00:00:00.000Z" agent="Cursor" version="22.0.0" type="device">
+  <diagram id="player-flow" name="プレイヤー処理">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="入力取得" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="押下キー?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="上: dy=-speed&#xa;下: dy=+speed&#xa;左: dx=-speed&#xa;右: dx=+speed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="180" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="仮の新座標計算&#xa;(new_x, new_y)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="280" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="壁との衝突判定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="壁に衝突?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="420" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Yes: 移動キャンセル" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="No: 座標更新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="次の処理へ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="570" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="8" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="junki-ai" name="純鬼追跡AI">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="純鬼の現在位置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="プレイヤーとの距離計算&#xa;dx=px-jx, dy=py-jy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="160" y="100" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="距離を正規化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="170" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="移動方向ベクトル取得" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="180" y="230" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="純鬼の速度で移動量計算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="170" y="290" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="壁との衝突判定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="190" y="350" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="壁に衝突?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="410" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Yes: 別経路or停止" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="415" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="No: 純鬼の座標更新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="415" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="次のフレームへ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="200" y="490" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="距離 &lt; 接触判定?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="190" y="550" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Yes: ゲームオーバー判定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="555" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="No: 継続" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="555" width="80" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="8" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#1a1a1a;" edge="1" parent="1" source="12" target="14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
