@@ -3,10 +3,9 @@
 メインループから呼ばれる描画関数をこのファイルに書く。
 """
 
-import pygame
+import pygame                                 # 描画用。Surface / Font / blit / fill などで使用
 
-# config の定数（画面サイズや色）を使うため import
-from src.config import COLOR_BLACK, COLOR_WHITE, SCREEN_HEIGHT, SCREEN_WIDTH
+from src.config import COLOR_BLACK, COLOR_WHITE, SCREEN_HEIGHT, SCREEN_WIDTH  # 色と画面サイズ。描画位置・背景色で使用
 
 
 def draw_title_screen(screen: pygame.Surface, font: pygame.font.Font) -> None:
@@ -14,24 +13,18 @@ def draw_title_screen(screen: pygame.Surface, font: pygame.font.Font) -> None:
     タイトル画面を描画する関数。
     ・screen: 描画先の画面（game.py の self.screen が渡される）
     ・font: 文字を描くときに使うフォント（game.py の self.font が渡される）
+    呼び出し元: game.py の _draw_title()
     """
-    # --- 画面を黒で塗りつぶす（これで背景が黒になる）---
-    screen.fill(COLOR_BLACK)
+    screen.fill(COLOR_BLACK)                   # 画面全体を黒で塗りつぶす。背景になる
 
-    # --- タイトル用の文字「純鬼（じゅんき）」を描画（こちらは実装済み）---
-    # 1) 文字の画像（Surface）を作る:  render(文字, アンチエイリアス, 色)
-    title = font.render("純鬼（じゅんき）", True, COLOR_WHITE)
-    # 2) その画像を「どこに置くか」の矩形を作る: center= で画面中央の少し上に指定
-    tr = title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 40))
-    # 3) 画面に貼り付ける: blit(貼り付ける画像, 位置の矩形)
-    screen.blit(title, tr)
+    title = font.render("純鬼（じゅんき）", True, COLOR_WHITE)   # タイトル文字の画像（Surface）を作成
+    tr = title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 40))  # 画面中央やや上に配置する矩形
+    screen.blit(title, tr)                     # タイトルを screen に描画
 
-    # --- サブテキスト「終了: ウィンドウの × ボタン」をタイトルの下に描画 ---
-    sub = font.render("終了: ウィンドウの × ボタン", True, COLOR_WHITE)
-    sr = sub.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 20))
-    screen.blit(sub, sr)
+    sub = font.render("終了: ウィンドウの × ボタン", True, COLOR_WHITE)  # サブテキストの画像を作成
+    sr = sub.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 20))     # タイトルの下に配置する矩形
+    screen.blit(sub, sr)                      # サブテキストを screen に描画
 
-    # --- メニュー「はじめる / つづきから / 終了」を描画 ---
-    menu_text = font.render("はじめる: Enter  つづきから: L  終了: Q", True, COLOR_WHITE)
-    mr = menu_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))
-    screen.blit(menu_text, mr)
+    menu_text = font.render("はじめる: Enter  つづきから: L  終了: Q", True, COLOR_WHITE)  # メニュー文字の画像を作成
+    mr = menu_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))           # さらに下に配置する矩形
+    screen.blit(menu_text, mr)                # メニュー文字を screen に描画
