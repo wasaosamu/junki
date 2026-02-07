@@ -30,3 +30,8 @@ def draw_title_screen(screen: pygame.Surface, font: pygame.font.Font) -> None:
     sub = font.render("終了: ウィンドウの × ボタン", True, COLOR_WHITE)
     sr = sub.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 20))
     screen.blit(sub, sr)
+
+    # --- メニュー「はじめる / つづきから / 終了」を描画 ---
+    menu_text = font.render("はじめる: Enter  つづきから: L  終了: Q", True, COLOR_WHITE)
+    mr = menu_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))
+    screen.blit(menu_text, mr)

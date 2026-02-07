@@ -5,11 +5,15 @@
 エンディング処理は未実装（後で追加）。
 """
 
+from pathlib import Path
+
 import pygame
 
 from src.config import (
     COLOR_BLACK,
     COLOR_WHITE,
+    FONT_PATHS_TO_TRY,
+    FONT_SIZE,
     FPS,
     SCREEN_HEIGHT,
     SCREEN_WIDTH,
@@ -35,8 +39,30 @@ class Game:
 
         # フレームレート（60FPS）を守るための時計
         self.clock = pygame.time.Clock()
-        # 文字を描画するときのフォント（None = デフォルト、36 = サイズ）
-        self.font = pygame.font.Font(None, 36)
+        # 日本語が表示されるフォントを優先して読み込む（文字化け防止）
+        self.font = self._create_font()
+
+    def _create_font(self) -> pygame.font.Font:
+        """日本語対応フォントを探して返す。見つからなければデフォルトフォント。"""
+        project_root = Path(__file__).resolve().parent.parent
+        paths_to_try = list(FONT_PATHS_TO_TRY)
+        # プロジェクトの assets/fonts/ 内の .ttf / .ttc も候補にする
+        assets_fonts = project_root / "assets" / "fonts"
+        if assets_fonts.exists():
+            for ext in ("*.ttf", "*.ttc", "*.otf"):
+                for f in assets_fonts.glob(ext):
+                    paths_to_try.append(str(f))
+                    break
+        for path_str in paths_to_try:
+            p = Path(path_str)
+            if not p.is_absolute():
+                p = project_root / path_str
+            if p.exists():
+                try:
+                    return pygame.font.Font(str(p), FONT_SIZE)
+                except OSError:
+                    continue
+        return pygame.font.Font(None, FONT_SIZE)
 
     def run(self) -> None:
         """
